@@ -1,0 +1,4 @@
+# ignore all .ipynb files
+*.ipynb
+.ipynb_checkpoints
+*.bak
