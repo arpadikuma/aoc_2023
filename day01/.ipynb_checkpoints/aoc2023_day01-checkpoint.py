@@ -1,9 +1,14 @@
+import os
 import sys
 
+file_path = './01.txt'
 if sys.argv and len(sys.argv) > 1:
     file_path = sys.argv[1]
 else:
-    file_path = input('enter the relative path & filename to the encrypted calibration values file: ')
+    if os.path.exists(file_path):
+        file_path = file_path
+    else:
+        file_path = input('enter the relative path & filename to the encrypted calibration values file: ')
 
 number_dict = {
     'one': '1',
