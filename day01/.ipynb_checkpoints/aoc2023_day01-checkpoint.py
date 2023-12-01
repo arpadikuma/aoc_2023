@@ -43,4 +43,5 @@ def sum_calibration_values(filepath):
             textlines[n] = int(num_first + num_last)
         return sum(textlines)
 
-print(sum_calibration_values(file_path))
+if __name__ == "__main__":
+    print(sum_calibration_values(file_path))
