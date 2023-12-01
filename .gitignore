@@ -1,4 +1,5 @@
 # ignore all .ipynb files
 *.ipynb
-*ipynb_checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
 *.bak
