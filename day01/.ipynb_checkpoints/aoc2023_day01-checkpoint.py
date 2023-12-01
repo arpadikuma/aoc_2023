@@ -20,18 +20,17 @@ number_dict = {
 def extract_num(text, dict=number_dict, reverse=False):
     if reverse == True: # reversed option for the last digit
         dict = {key[::-1]:value for key, value in dict.items()}    # invert the number mapping dictionary's keys
-        text = text[::-1]    # inver the text
-    spelled_out_number = ""
+        text = text[::-1]    # invert the text
     for n, char in enumerate(text):
         if char.isdigit():
             return char
         elif char.isalpha():
+            spelled_out_number = ""
             for subchar in text[n:]:
                 if subchar.isalpha():
                     spelled_out_number += subchar
                 if spelled_out_number in dict.keys():
                     return dict[spelled_out_number]
-            spelled_out_number = ""
 
 def sum_calibration_values(filepath):
     with open(filepath) as f:
