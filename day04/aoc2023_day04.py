@@ -56,7 +56,6 @@ def main():
         all_cards = f.read().split("\n")
         point_sum = 0
         card_list = []
-        card_dict = {}
         copies_dict = {x+1:1 for x in range(len(all_cards))}
         # copies_dict = {}
         for card in all_cards:
@@ -68,7 +67,6 @@ def main():
             # print(f"{matches} wins with {points} points")
             point_sum += points
         copies_dict = copies_count(all_cards, copies_dict)
-    
 
     print(f"The total points are: {point_sum}")
     print(f"The total amount of cards is: {sum(copies_dict.values())}")
