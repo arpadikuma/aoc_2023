@@ -34,16 +34,11 @@ def check_wins(wins, haves):
 def copies_count(cards, copies_dict):
     for i, card in enumerate(cards):
         card_no, wins, haves = splitting_card(card)
-        # print(card)
-        # print(f"check_wins({wins}, {haves})")
         matches, points = check_wins(wins, haves)
-        # print(f"{matches} m with {points} p")
         modifier = copies_dict[card_no]
-        # print(modifier)
         if points > 0:
             for j in range(1, matches+1):
                 if j in copies_dict:
-                    # print(f'increasing dict {j} by 1')
                     copies_dict[card_no+j] += 1*modifier
                 else:
                     print(f'creating dict {j}')
@@ -57,14 +52,10 @@ def main():
         point_sum = 0
         card_list = []
         copies_dict = {x+1:1 for x in range(len(all_cards))}
-        # copies_dict = {}
         for card in all_cards:
             card_no, winning_list, having_list = splitting_card(card)
-            # card_dict[card_no] = 
             card_list.append([card_no, winning_list, having_list])
-            # print(card_no)
             matches, points = check_wins(winning_list, having_list)
-            # print(f"{matches} wins with {points} points")
             point_sum += points
         copies_dict = copies_count(all_cards, copies_dict)
 
@@ -74,4 +65,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
