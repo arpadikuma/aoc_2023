@@ -1,0 +1,12 @@
+RL
+
+AAA = (XXL, DRR)
+XXL = (RLS, QFX)
+FFF = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DRR = (CCC, BBB)
+QFX = (GGG, GGG)
+EEE = (EEE, EEE)
+GGG = (XXL, ZZZ)
+ZZZ = (ZZZ, ZZZ)
