@@ -87,28 +87,22 @@ def calc_navigation_path(start, end, directions, map_dict, mode='hooman'):
 def main():
     with open(file_path) as f:
         text = f.read()
-    
         directions, map_dict = parse_map(text)
-    
+
         # human mode
-    
         map_loc = 'AAA'
         end_loc = 'ZZZ'
-        
         steps = calc_navigation_path(map_loc, end_loc, directions, map_dict)
 
-    
         # ghost mode 
-    
         start_letter = 'A'
         goal_letter = 'Z'
-    
         total_steps = calc_navigation_path(start_letter, goal_letter, directions, map_dict, mode='ghost')
 
         return steps, total_steps
 
 if __name__ == "__main__":
     steps, total_steps = main()
-    
+
     print(f"total steps required to reach ZZZ: {steps}")    
     print(f"total steps for all paths to converge on Z simultaneously: {total_steps}")
